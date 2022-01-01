@@ -1,0 +1,25 @@
+{
+  "name": "request-header-parser",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "ntlstart": "sudo ntl dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "request-header-parser"
+  },
+  "author": "Kyle Sorenson",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.2",
+    "serverless-http": "^2.7.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
