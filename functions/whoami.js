@@ -16,7 +16,7 @@ module.exports.handler = async (event, context) => {
   const result = await handler(event, context);
   // result.body is returned
   // console.log(result);
-  return result;
+  return result.body;
   // return {
   //   statusCode: 200,
   //   headers: JSON.stringify(result.headers),
