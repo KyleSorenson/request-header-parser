@@ -2,6 +2,6 @@
   functions="functions"
   publish="dist"
 [[redirects]]
-  to="/.netlify/functions/api/:splat"
-  from="/api/*"
+  to="/.netlify/functions/whoami/:splat"
+  from="/api/whoami*"
   status=200
