@@ -13,9 +13,9 @@ module.exports.handler = async (event, context) => {
   const result = await handler(event, context);
   return {
     statusCode: 200,
-    headers: JSON.stringify({
+    headers: {
       "Access-Control-Allow-Origin": "*",
-    }),
+    },
     body: JSON.stringify({
       ipaddress: event.headers["client-ip"],
       language: event.headers["accept-language"],
@@ -23,3 +23,17 @@ module.exports.handler = async (event, context) => {
     }),
   };
 };
+
+// module.exports.handler = async (event, context) => {
+//   return {
+//     statusCode: 200,
+//     headers: {
+//       "Access-Control-Allow-Origin": "*",
+//     },
+//     body: JSON.stringify({
+//       ipaddress: event.headers["client-ip"],
+//       language: event.headers["accept-language"],
+//       software: event.headers["user-agent"],
+//     }),
+//   };
+// };
