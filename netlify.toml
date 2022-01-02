@@ -8,4 +8,4 @@
 [[headers]]
   for="/api/whoami*"
   [headers.values]
-    Access-Control-Allow-Origin: *
+    Access-Control-Allow-Origin="*"
