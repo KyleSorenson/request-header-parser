@@ -12,12 +12,12 @@
 module.exports.handler = async (event, context) => {
   return {
     statusCode: 200,
-    headers: {
-      "x-powered-by": "Express",
-      "access-control-allow-origin": "*",
-      "content-type": "application/json; charset=utf-8",
-      "content-length": "211",
-    },
+    headers: JSON.stringify({
+      x-powered-by: "Express",
+      access-control-allow-origin: "*",
+      content-type: "application/json; charset=utf-8",
+      content-length: "211",
+    }),
     body: JSON.stringify({
       ipaddress: event.headers["client-ip"],
       language: event.headers["accept-language"],
