@@ -1,4 +1,3 @@
-require("dotenv").config();
 var express = require("express");
 var app = express();
 
@@ -12,7 +11,8 @@ const apiRouter = express.Router();
 
 apiRouter.get("/whoami", function (req, res) {
   res.json({
-    ipaddress: req.header("client-ip"),
+    // ipaddress: req.ip, // server
+    ipaddress: req.header("client-ip"), // serverless
     language: req.header("accept-language"),
     software: req.header("user-agent"),
   });

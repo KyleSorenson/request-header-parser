@@ -5,7 +5,3 @@
   to="/.netlify/functions/whoami/:splat"
   from="/api/whoami*"
   status=200
-[[headers]]
-  for="/api/whoami*"
-  [headers.values]
-    Access-Control-Allow-Origin="*"

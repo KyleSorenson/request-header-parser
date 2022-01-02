@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const app = require("./js/app.js");
 
@@ -8,7 +9,7 @@ app.use(express.static("dist"));
 
 // http://expressjs.com/en/starter/basic-routing.html
 app.get("/", function (req, res) {
-  res.sendFile(__dirname + "/dist/index.html");
+  res.sendFile(path + "/dist/index.html");
 });
 
 // listen for requests :)
