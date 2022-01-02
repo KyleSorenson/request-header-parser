@@ -15,18 +15,18 @@ module.exports.handler = async (event, context) => {
   // );
   const result = await handler(event, context);
   // result object includes statusCode, headers, body
-  console.log(result);
-  // return result;
-  return {
-    statusCode: 200,
-    headers: result.headers,
-    // body: result.body,
-    body: JSON.stringify({
-      ipaddress: event.headers["client-ip"],
-      language: event.headers["accept-language"],
-      software: event.headers["user-agent"],
-    }),
-  };
+  // console.log(result);
+  return result;
+  // return {
+  //   statusCode: 200,
+  //   headers: result.headers,
+  //   // body: result.body,
+  //   body: JSON.stringify({
+  //     ipaddress: event.headers["client-ip"],
+  //     language: event.headers["accept-language"],
+  //     software: event.headers["user-agent"],
+  //   }),
+  // };
 };
 
 // module.exports.handler = async (event, context) => {

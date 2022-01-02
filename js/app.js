@@ -14,7 +14,8 @@ apiRouter.get("/whoami", function (req, res) {
   // console.log(req.headers);
   // console.log(req.accepted)
   res.json({
-    ipaddress: req.ip,
+    // otherthing: "this thingzzz",
+    ipaddress: req.header("client-ip"),
     language: req.header("accept-language"),
     software: req.header("user-agent"),
   });
