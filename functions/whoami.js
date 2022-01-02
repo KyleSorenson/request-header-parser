@@ -1,6 +1,8 @@
 const app = require("../js/app.js");
+const serverless = require("serverless-http");
+const handler = serverless(app);
 
-module.exports.handler = function (event, context, callback) {
+module.exports.handler = async (event, context) => {
   console.log(
     `{\ncontext: ${JSON.stringify(context, null, 2)},\nevent: ${JSON.stringify(
       event,
@@ -8,12 +10,16 @@ module.exports.handler = function (event, context, callback) {
       2
     )}\n}`
   );
-  callback(null, {
+  const result = await handler(event, context);
+  return {
     statusCode: 200,
+    headers: JSON.stringify({
+      "Access-Control-Allow-Origin": "*",
+    }),
     body: JSON.stringify({
       ipaddress: event.headers["client-ip"],
       language: event.headers["accept-language"],
       software: event.headers["user-agent"],
     }),
-  });
+  };
 };
