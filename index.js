@@ -2,19 +2,19 @@ const express = require("express");
 const app = require("./js/app.js");
 
 // Parse Header
-const apiRouter = express.Router();
+// const apiRouter = express.Router();
 
-apiRouter.get("/whoami", function (req, res) {
-  console.log(req.headers);
-  // console.log(req.accepted)
-  res.json({
-    ipaddress: req.ip,
-    language: req.header("accept-language"),
-    software: req.header("user-agent"),
-  });
-});
+// apiRouter.get("/whoami", function (req, res) {
+//   console.log(req.headers);
+//   // console.log(req.accepted)
+//   res.json({
+//     ipaddress: req.ip,
+//     language: req.header("accept-language"),
+//     software: req.header("user-agent"),
+//   });
+// });
 
-app.use("/api", apiRouter);
+// app.use("/api", apiRouter);
 
 const path = require("path");
 
