@@ -11,10 +11,7 @@ app.use(cors({ optionsSuccessStatus: 200 })); // some legacy browsers choke on 2
 const apiRouter = express.Router();
 
 apiRouter.get("/whoami", function (req, res) {
-  // console.log(req.headers);
-  // console.log(req.accepted)
   res.json({
-    // otherthing: "this thingzzz",
     ipaddress: req.header("client-ip"),
     language: req.header("accept-language"),
     software: req.header("user-agent"),
